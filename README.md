@@ -5,7 +5,7 @@ A comprehensive audio analysis system for speaker recognition and speech transcr
 ## Overview
 
 This project implements three different approaches to audio analysis:
-1. **Pyannote** - Speaker recognition using pre-trained embeddings (Recommended)
+1. **Pyannote** - Speaker recognition using pre-trained embeddings 
 2. **SpeechBrain** - Alternative speaker recognition approach
 3. **Whisper** - OpenAI's speech-to-text transcription with speaker classification
 
@@ -14,8 +14,6 @@ The system can download audio files from AWS S3, process them through various ML
 ## Key Features
 
 - **Multi-modal Analysis**: Three different ML approaches for comprehensive audio analysis
-- **AWS Integration**: Seamless audio file download from S3 with rate limiting
-- **High Accuracy**: Achieved 96.77% accuracy with Pyannote approach
 - **Batch Processing**: Handle individual files or bulk analysis
 - **Comprehensive Reporting**: Generate confusion matrices, classification reports, and transcriptions
 

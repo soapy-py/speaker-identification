@@ -138,7 +138,7 @@ What it does:
 ## 3. Whisper (whisper_speech_recognition.py) ##
 What it does:
 •  Different approach entirely - uses speech content, not voice characteristics
-•  Transcribes speech to text using Whisper
+•  Transcribes speech to text using Whisper (latency ~3-4 minutes)
 •  Uses TF-IDF (word frequency analysis) to classify speakers based on what they say
 •  No voice characteristics - purely based on speech patterns and vocabulary
 

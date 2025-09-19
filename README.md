@@ -11,7 +11,7 @@ This project implements three different approaches to audio analysis:
 
 The system can download audio files from AWS S3, process them through various ML models, and generate detailed analysis reports including confusion matrices and accuracy metrics.
 
-## 🎯 Key Features
+## Key Features
 
 - **Multi-modal Analysis**: Three different ML approaches for comprehensive audio analysis
 - **AWS Integration**: Seamless audio file download from S3 with rate limiting
@@ -19,7 +19,7 @@ The system can download audio files from AWS S3, process them through various ML
 - **Batch Processing**: Handle individual files or bulk analysis
 - **Comprehensive Reporting**: Generate confusion matrices, classification reports, and transcriptions
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ├── raw_audio_files/           # Main Python analysis scripts
@@ -38,7 +38,7 @@ The system can download audio files from AWS S3, process them through various ML
 └── other supporting directories...
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -108,7 +108,7 @@ Audio files are organized with the naming convention:
 {user_id}-{fatigue_index}-{timestamp}-{unique_hash}.m4a
 ```
 
-## 📊 Model Performance
+## Model Performance
 
 | Approach | Accuracy | Notes |
 |----------|----------|-------|
@@ -116,7 +116,7 @@ Audio files are organized with the naming convention:
 | SpeechBrain | TBD | Alternative embedding approach |
 | Whisper | TBD | Speech-to-text + classification |
 
-## 🛠️ Technical Details
+## 🛠Technical Details
 
 ### Pyannote Approach
 - Uses pre-trained ECAPA-TDNN embeddings
@@ -137,7 +137,7 @@ Audio files are organized with the naming convention:
 - S3 file download with retry logic and rate limiting
 - Configurable batch processing with delays
 
-## 📈 Output Files
+## Output Files
 
 The system generates:
 - **Confusion matrices** (PNG images)
@@ -145,7 +145,7 @@ The system generates:
 - **Transcription files** (JSON format)
 - **Per-user accuracy metrics**
 
-## ⚙️ Configuration
+## Configuration
 
 Key configuration options:
 - Model selection (tiny, base, small, medium, large for Whisper)
@@ -153,13 +153,13 @@ Key configuration options:
 - Test/train split ratios
 - Feature extraction parameters
 
-## 🔒 Security Notes
+## Security Notes
 
 - Audio files and credentials are excluded from git via .gitignore
 - AWS SSO authentication required
 - Sensitive configuration files are not committed
 
-## 📝 Development
+## Development
 
 ### Jupyter Notebooks
 Prototyping and experimentation notebooks are available in `jupyternotebook_scripts/`:
@@ -171,21 +171,3 @@ Prototyping and experimentation notebooks are available in `jupyternotebook_scri
 ```bash
 python run_audio_analysis.py --check-deps
 ```
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🎉 Acknowledgments
-
-- OpenAI Whisper team for the speech recognition model
-- Pyannote.audio team for speaker embedding models
-- SpeechBrain team for the toolkit and pre-trained models

@@ -74,6 +74,7 @@ aws sso login
 ```bash
 python run_audio_analysis.py --all
 ```
+might need to run convert_audio M4A -> WAV and ensure the models have the right repository of WAV files before running audio analysis
 
 **Run specific approach:**
 ```bash

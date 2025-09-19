@@ -131,7 +131,7 @@ About pretraining: The deep neural network is already trained on thousands of sp
 ## 2. SpeechBrain (speechbrain_speaker_recognition.py) ## 
 What it does:
 •  Same concept as Pyannote but uses SpeechBrain's pre-trained models
-•  Also extracts speaker embeddings from a pre-trained model
+•  Also extracts speaker embeddings from a pre-trained model (latency is not longer than a minute)
 •  Trains logistic regression on the embeddings
 •  No deep model retraining - just feature extraction + simple classification
 

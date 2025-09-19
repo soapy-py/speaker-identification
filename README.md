@@ -118,19 +118,33 @@ Audio files are organized with the naming convention:
 
 ## 🛠Technical Details
 
-### Pyannote Approach
-- Uses pre-trained ECAPA-TDNN embeddings
-- Logistic regression classifier on speaker embeddings
-- Handles variable sample sizes with adaptive splitting
+## 1. Pyannote (pyannote_speaker_recognition.py) ##
+What it does:
+•  Uses a pre-trained ECAPA-TDNN model (trained on VoxCeleb dataset)
+•  Extracts speaker embeddings (numerical fingerprints) from audio
+•  Trains a logistic regression classifier on these embeddings to identify speakers
+•  No retraining of the deep model - just uses the pre-trained embeddings
 
-### SpeechBrain Approach  
-- Similar embedding-based approach with different pre-trained models
-- Compatible with Pyannote pipeline
+About pretraining: The deep neural network is already trained on thousands of speakers from VoxCeleb. You're NOT retraining it - you're just using it as a feature extractor and training a simple classifier on top.
 
-### Whisper Approach
-- OpenAI Whisper for speech transcription
-- TF-IDF feature extraction from transcriptions
-- Text-based speaker classification
+## 2. SpeechBrain (speechbrain_speaker_recognition.py) ## 
+What it does:
+•  Same concept as Pyannote but uses SpeechBrain's pre-trained models
+•  Also extracts speaker embeddings from a pre-trained model
+•  Trains logistic regression on the embeddings
+•  No deep model retraining - just feature extraction + simple classification
+
+## 3. Whisper (whisper_speech_recognition.py) ##
+What it does:
+•  Different approach entirely - uses speech content, not voice characteristics
+•  Transcribes speech to text using Whisper
+•  Uses TF-IDF (word frequency analysis) to classify speakers based on what they say
+•  No voice characteristics - purely based on speech patterns and vocabulary
+
+How they give probabilities:
+All three output probabilities via the logistic regression classifier:
+•  Input: Audio file
+•  Output: Probability distribution across known speakers (e.g., 85% Speaker A, 15% Speaker B)
 
 ### AWS Integration
 - PostgreSQL database integration for assessment ID lookup

@@ -1,0 +1,18 @@
+{
+  "name": "onboarding-script",
+  "module": "index.ts",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "dotenv": "^16.4.5"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "start": "AWS_SDK_JS_SUPPRESS_MAINTENANCE_MODE_MESSAGE=1 bun index.ts"
+  },
+  "type": "module",
+  "dependencies": {
+    "aws-sdk": "^2.1574.0"
+  }
+}

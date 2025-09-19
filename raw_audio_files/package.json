@@ -1,0 +1,21 @@
+{
+  "name": "raw_voice_assessment_files",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "start": "ENV=production bun index.ts ./production.txt",
+    "dev": "ENV=development bun index.ts ./sandbox.txt"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/pg": "^8.11.10"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.674.0",
+    "@aws-sdk/client-secrets-manager": "^3.675.0",
+    "pg": "^8.13.0"
+  }
+}
